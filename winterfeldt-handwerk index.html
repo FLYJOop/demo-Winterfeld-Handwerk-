@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winterfeldt Handwerk – Ihr Handwerker im Kiez | Berlin-Schöneberg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:wght@600;800&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --petrol: #1B3A4B;
+    --petrol-dark: #122733;
+    --brass: #C98A2C;
+    --brass-light: #E0AC55;
+    --plaster: #F1ECE2;
+    --plaster-2: #E8E1D2;
+    --charcoal: #22262B;
+    --brick: #A4402E;
+    --steel: #C7CCC9;
+    --white: #FFFFFF;
+
+    --font-display: 'Big Shoulders Stencil', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    font-family: var(--font-body);
+    background: var(--plaster);
+    color: var(--charcoal);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg{ display:block; max-width:100%; }
+
+  a{ color:inherit; text-decoration:none; }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  h1,h2,h3{
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.02;
+    color: var(--petrol);
+    text-transform: uppercase;
+  }
+
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass);
+    font-weight: 600;
+  }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 3px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; scroll-behavior:auto !important; }
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--plaster);
+    border-bottom: 2px solid var(--petrol);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .logo{
+    display:flex;
+    flex-direction: column;
+    line-height: 0.85;
+  }
+  .logo .l1{
+    font-family: var(--font-display);
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--petrol);
+    letter-spacing: 0.02em;
+  }
+  .logo .l2{
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+    margin-top: 4px;
+  }
+  nav ul{
+    display:flex;
+    gap: 30px;
+    list-style:none;
+  }
+  nav a{
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--charcoal);
+    position: relative;
+    padding-bottom: 4px;
+  }
+  nav a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:0;
+    width:0; height:2px;
+    background: var(--brass);
+    transition: width 0.2s ease;
+  }
+  nav a:hover::after{ width:100%; }
+
+  .header-cta{
+    display:flex;
+    align-items:center;
+    gap: 18px;
+  }
+  .phone-link{
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--petrol);
+    white-space: nowrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 12px 22px;
+    border-radius: 3px;
+    border: 2px solid var(--petrol);
+    background: var(--petrol);
+    color: var(--white);
+    cursor:pointer;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover{ background: var(--petrol-dark); transform: translateY(-1px); }
+  .btn.ghost{
+    background: transparent;
+    color: var(--petrol);
+  }
+  .btn.ghost:hover{ background: var(--petrol); color: var(--white); }
+  .btn.brass{
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--petrol-dark);
+  }
+  .btn.brass:hover{ background: var(--brass-light); }
+
+  .mobile-toggle{ display:none; }
+
+  @media (max-width: 880px){
+    nav{ display:none; }
+    .phone-link{ display:none; }
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position: relative;
+    overflow: hidden;
+    background: var(--petrol);
+    color: var(--plaster);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-120px; right:-160px;
+    width: 480px; height: 480px;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--brass) 0px, var(--brass) 22px,
+      transparent 22px, transparent 44px
+    );
+    opacity: 0.16;
+    transform: rotate(8deg);
+  }
+  .hero-inner{
+    position:relative;
+    display:grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items:center;
+    padding: 84px 32px 70px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .hero h1{
+    color: var(--white);
+    font-size: clamp(2.6rem, 4.6vw, 4rem);
+    margin-bottom: 22px;
+  }
+  .hero h1 span{ color: var(--brass-light); }
+  .hero p.lead{
+    font-size: 1.12rem;
+    max-width: 480px;
+    color: var(--steel);
+    margin-bottom: 32px;
+  }
+  .hero-ctas{
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .hero-note{
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--steel);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .hero-note .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: #6FBE7C;
+    flex-shrink:0;
+  }
+
+  /* Pegboard illustration */
+  .pegboard{
+    position: relative;
+    background: var(--petrol-dark);
+    border: 2px solid #2C4F62;
+    border-radius: 6px;
+    padding: 30px;
+    background-image:
+      radial-gradient(circle, rgba(241,236,226,0.18) 1.6px, transparent 1.6px);
+    background-size: 34px 34px;
+    background-position: 17px 17px;
+  }
+  .peg-row{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .peg-tool{
+    background: var(--plaster);
+    border-radius: 6px;
+    padding: 18px 10px 14px;
+    text-align:center;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.18);
+  }
+  .peg-tool svg{ margin: 0 auto 8px; width: 30px; height: 30px; }
+  .peg-tool span{
+    display:block;
+    font-family: var(--font-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.05em;
+    color: var(--petrol);
+    font-weight: 600;
+  }
+
+  /* ---------- RULER STRIP (signature element) ---------- */
+  .ruler-section{
+    background: var(--plaster-2);
+    border-bottom: 2px solid var(--petrol);
+    padding: 46px 0 30px;
+    overflow-x: hidden;
+  }
+  .ruler-track{
+    position: relative;
+    height: 30px;
+    background: var(--white);
+    border-top: 2px solid var(--charcoal);
+    border-bottom: 2px solid var(--charcoal);
+    margin: 0 32px 0;
+  }
+  .ruler-track::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--charcoal) 0, var(--charcoal) 1px,
+      transparent 1px, transparent 24px
+    );
+  }
+  .ruler-marks{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+    margin-top: -2px;
+  }
+  .ruler-mark{
+    position:relative;
+    padding-top: 26px;
+    text-align:center;
+  }
+  .ruler-mark::before{
+    content:"";
+    position:absolute;
+    top:-26px; left:50%;
+    width:2px; height:26px;
+    background: var(--brass);
+    transform: translateX(-50%);
+  }
+  .ruler-mark .cm{
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--steel);
+    display:block;
+    margin-bottom: 6px;
+  }
+  .ruler-mark .num{
+    font-family: var(--font-display);
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: var(--petrol);
+    line-height: 1;
+  }
+  .ruler-mark .lbl{
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    margin-top: 4px;
+    display:block;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{ padding: 84px 0; }
+  .section-head{
+    max-width: 620px;
+    margin-bottom: 52px;
+  }
+  .section-head h2{
+    font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+    margin-top: 10px;
+  }
+  .section-head p{
+    margin-top: 16px;
+    color: #44494E;
+    font-size: 1.02rem;
+  }
+
+  /* ---------- LEISTUNGEN ---------- */
+  .services-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .service-card{
+    background: var(--white);
+    border: 2px solid var(--steel);
+    border-radius: 4px;
+    padding: 30px 26px;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+  }
+  .service-card:hover{
+    border-color: var(--brass);
+    transform: translateY(-3px);
+  }
+  .service-card svg{ width: 34px; height:34px; margin-bottom: 18px; color: var(--brick); }
+  .service-card h3{
+    font-size: 1.18rem;
+    margin-bottom: 10px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .service-card p{
+    font-size: 0.94rem;
+    color: #555A5F;
+  }
+
+  /* ---------- ÜBER UNS ---------- */
+  .about{
+    background: var(--petrol);
+    color: var(--plaster);
+  }
+  .about .section-head p{ color: var(--steel); }
+  .about .eyebrow{ color: var(--brass-light); }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items:center;
+  }
+  .about h2{ color: var(--white); }
+  .about-text p{
+    color: var(--steel);
+    margin-bottom: 18px;
+    font-size: 1rem;
+  }
+  .quote-block{
+    border-left: 3px solid var(--brass);
+    padding-left: 20px;
+    margin-top: 28px;
+  }
+  .quote-block p{
+    font-style: italic;
+    color: var(--white);
+    font-size: 1.05rem;
+  }
+  .quote-block cite{
+    display:block;
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--brass-light);
+    font-style: normal;
+  }
+  .about-panel{
+    aspect-ratio: 4/3.2;
+    border-radius: 6px;
+    background:
+      repeating-linear-gradient(135deg, rgba(201,138,44,0.14) 0 14px, transparent 14px 28px),
+      linear-gradient(160deg, #2C4F62, #163040);
+    border: 2px solid #2C4F62;
+    position: relative;
+    overflow:hidden;
+    display:flex;
+    align-items:flex-end;
+    padding: 22px;
+  }
+  .about-panel .tag{
+    background: var(--brass);
+    color: var(--petrol-dark);
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 3px;
+  }
+
+  /* ---------- PROZESS ---------- */
+  .process-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+  .process-step{
+    position:relative;
+    padding-top: 18px;
+    border-top: 3px solid var(--petrol);
+  }
+  .process-step .step-num{
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--steel);
+    -webkit-text-stroke: 1.5px var(--petrol);
+    color: transparent;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .process-step h3{
+    font-size: 1.05rem;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 8px;
+  }
+  .process-step p{
+    font-size: 0.92rem;
+    color: #555A5F;
+  }
+
+  /* ---------- REFERENZEN ---------- */
+  .ref-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .ref-card{
+    border: 2px solid var(--petrol);
+    border-radius: 4px;
+    overflow:hidden;
+    background: var(--white);
+  }
+  .ref-img{
+    height: 150px;
+    position:relative;
+    background: linear-gradient(135deg, var(--brass-light), var(--brass));
+  }
+  .ref-img.alt2{ background: linear-gradient(135deg, #6FA1B5, var(--petrol)); }
+  .ref-img.alt3{ background: linear-gradient(135deg, #C77E6A, var(--brick)); }
+  .ref-img .street{
+    position:absolute;
+    bottom: 10px; left: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.9);
+    background: rgba(0,0,0,0.25);
+    padding: 4px 9px;
+    border-radius: 3px;
+  }
+  .ref-body{ padding: 20px 22px 24px; }
+  .ref-body .eyebrow{ color: var(--brick); }
+  .ref-body h3{
+    font-size: 1.05rem;
+    text-transform:none;
+    letter-spacing: 0;
+    margin: 8px 0 8px;
+  }
+  .ref-body p{ font-size: 0.9rem; color: #555A5F; }
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-section{ background: var(--plaster-2); }
+  .testi-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testi-card{
+    background: var(--white);
+    border-radius: 4px;
+    padding: 28px 24px;
+    border: 2px solid var(--steel);
+  }
+  .testi-card .stars{ color: var(--brass); font-size: 0.95rem; margin-bottom: 14px; letter-spacing: 2px; }
+  .testi-card p.txt{ font-size: 0.95rem; color: var(--charcoal); margin-bottom: 16px; }
+  .testi-card .person{
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: #6A6F73;
+  }
+
+  /* ---------- KONTAKT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .contact-info h3{
+    font-size: 1.05rem;
+    text-transform:none;
+    letter-spacing:0;
+    margin-bottom: 18px;
+  }
+  .info-row{
+    display:flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+  }
+  .info-row svg{ width:20px; height:20px; flex-shrink:0; margin-top:2px; color: var(--brick); }
+  .info-row strong{ display:block; font-size: 0.78rem; text-transform:uppercase; letter-spacing:0.06em; color:#6A6F73; font-family: var(--font-mono); margin-bottom: 2px; }
+
+  .map-stub{
+    margin-top: 30px;
+    border: 2px solid var(--petrol);
+    border-radius: 4px;
+    background: var(--plaster-2);
+    height: 170px;
+    position:relative;
+    overflow:hidden;
+  }
+  .map-stub svg{ width:100%; height:100%; }
+
+  form{ display:flex; flex-direction:column; gap: 16px; }
+  .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
+  label{
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6A6F73;
+    margin-bottom: 6px;
+    display:block;
+  }
+  input, select, textarea{
+    width:100%;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 2px solid var(--steel);
+    border-radius: 3px;
+    background: var(--white);
+    color: var(--charcoal);
+  }
+  textarea{ resize: vertical; min-height: 100px; }
+  input:focus, select:focus, textarea:focus{ border-color: var(--brass); }
+  .field{ display:flex; flex-direction:column; }
+  .form-note{
+    font-size: 0.8rem;
+    color: #6A6F73;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background: var(--petrol-dark);
+    color: var(--steel);
+    padding: 50px 0 28px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+  .footer-logo .l1{ font-family: var(--font-display); font-size: 1.4rem; color: var(--white); }
+  .footer-logo .l2{ font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.2em; color: var(--brass-light); margin-top: 4px; display:block; }
+  .footer-grid p{ font-size: 0.88rem; margin-top: 12px; max-width: 320px; }
+  .footer-col h4{
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brass-light);
+    margin-bottom: 14px;
+  }
+  .footer-col ul{ list-style:none; }
+  .footer-col li{ margin-bottom: 9px; font-size: 0.9rem; }
+  .footer-bottom{
+    border-top: 1px solid #2C4F62;
+    padding-top: 20px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap: 10px;
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: #6F8B98;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero-inner{ grid-template-columns: 1fr; padding-top: 50px; }
+    .services-grid{ grid-template-columns: repeat(2,1fr); }
+    .process-grid{ grid-template-columns: repeat(2,1fr); gap: 30px 26px; }
+    .ref-grid{ grid-template-columns: repeat(2,1fr); }
+    .testi-grid{ grid-template-columns: 1fr; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    .ruler-marks{ grid-template-columns: repeat(2,1fr); row-gap: 30px; }
+    .footer-grid{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px){
+    .services-grid{ grid-template-columns: 1fr; }
+    .process-grid{ grid-template-columns: 1fr; }
+    .ref-grid{ grid-template-columns: 1fr; }
+    .form-row{ grid-template-columns: 1fr; }
+    .peg-row{ grid-template-columns: repeat(3,1fr); }
+    .hero-ctas{ flex-direction:column; align-items:stretch; }
+    .header-inner{ padding: 14px 20px; }
+    .wrap{ padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <span class="l1">WINTERFELDT</span>
+      <span class="l2">HANDWERK BERLIN</span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#leistungen">Leistungen</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#referenzen">Referenzen</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="phone-link" href="tel:+493021456789">030 / 214 567 89</a>
+      <a href="#kontakt" class="btn brass">Anfrage senden</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-inner">
+      <div>
+        <span class="eyebrow">Handwerksbetrieb · Berlin-Schöneberg</span>
+        <h1>Handwerk, das im <span>Kiez</span> hält.</h1>
+        <p class="lead">Renovierung, Sanitär, Elektro und Malerarbeiten aus einer Hand. Wir wohnen, wo wir arbeiten – rund um den Winterfeldtplatz, seit 2009.</p>
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn brass">Kostenlos anfragen</a>
+          <a href="#leistungen" class="btn ghost" style="border-color:var(--steel); color:var(--plaster);">Leistungen ansehen</a>
+        </div>
+        <div class="hero-note"><span class="dot"></span> Festpreis nach Besichtigung · Termine meist innerhalb von 5 Werktagen</div>
+      </div>
+
+      <div class="pegboard" aria-hidden="true">
+        <div class="peg-row">
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-.5.27l-3 .7a.6.6 0 0 1-.72-.72l.7-3a1 1 0 0 1 .27-.5z"/><path d="M13 8l3 3"/></svg>
+            <span>MALER</span>
+          </div>
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.97 7.97 0 0 0 0-2l2-1.6-2-3.4-2.4.6a8 8 0 0 0-1.7-1l-.4-2.6h-4l-.4 2.6a8 8 0 0 0-1.7 1l-2.4-.6-2 3.4 2 1.6a8 8 0 0 0 0 2l-2 1.6 2 3.4 2.4-.6a8 8 0 0 0 1.7 1l.4 2.6h4l.4-2.6a8 8 0 0 0 1.7-1l2.4.6 2-3.4z"/></svg>
+            <span>ELEKTRO</span>
+          </div>
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><path d="M7 21V9a5 5 0 0 1 10 0v12"/><path d="M3 21h18"/></svg>
+            <span>SANITÄR</span>
+          </div>
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><path d="M3 3l8.5 8.5"/><path d="M14 6l4-4 1 1-4 4"/><path d="M6 14l-4 4 1 1 4-4"/><circle cx="17" cy="17" r="4"/></svg>
+            <span>TISCHLEREI</span>
+          </div>
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            <span>FLIESEN</span>
+          </div>
+          <div class="peg-tool">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#1B3A4B" stroke-width="1.8"><path d="M14 3l7 7-9 9-7-7z"/><path d="M9 9l6 6"/></svg>
+            <span>RENOVIERUNG</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RULER / TRUST STRIP -->
+  <section class="ruler-section" style="padding-bottom:0;">
+    <div class="ruler-track" aria-hidden="true"></div>
+    <div class="ruler-marks">
+      <div class="ruler-mark"><span class="cm">15 cm</span><span class="num">15</span><span class="lbl">Jahre im Kiez</span></div>
+      <div class="ruler-mark"><span class="cm">340 cm</span><span class="num">340+</span><span class="lbl">Projekte umgesetzt</span></div>
+      <div class="ruler-mark"><span class="cm">10827 cm</span><span class="num">10827</span><span class="lbl">unsere Postleitzahl</span></div>
+      <div class="ruler-mark"><span class="cm">2 cm</span><span class="num">2×</span><span class="lbl">messen, einmal schneiden</span></div>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Leistungen</span>
+        <h2>Sechs Gewerke, ein Ansprechpartner</h2>
+        <p>Sie müssen nicht für jedes Gewerk einen anderen Betrieb anrufen. Wir koordinieren Maler, Elektriker und Installateur untereinander – Sie sprechen nur mit uns.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21l6.5-1.5L21 8l-4-4L5.5 14.5z"/><path d="M14 8l-2 2"/></svg>
+          <h3>Renovierung &amp; Sanierung</h3>
+          <p>Vom Badezimmer bis zur kompletten Altbauwohnung – wir planen, koordinieren und übergeben schlüsselfertig.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M7 21V9a5 5 0 0 1 10 0v12"/><path d="M3 21h18"/></svg>
+          <h3>Sanitär &amp; Heizung</h3>
+          <p>Bad­modernisierung, Rohrbrüche, neue Armaturen. Notdienst für Bestandskunden innerhalb von 24 Stunden.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M19.4 13a7.97 7.97 0 0 0 0-2l2-1.6-2-3.4-2.4.6a8 8 0 0 0-1.7-1l-.4-2.6h-4l-.4 2.6a8 8 0 0 0-1.7 1l-2.4-.6-2 3.4 2 1.6a8 8 0 0 0 0 2l-2 1.6 2 3.4 2.4-.6a8 8 0 0 0 1.7 1l.4 2.6h4l.4-2.6a8 8 0 0 0 1.7-1l2.4.6 2-3.4z"/></svg>
+          <h3>Elektroinstallation</h3>
+          <p>Sicherungskästen, Steckdosen, Smart-Home-Vorbereitung – nach VDE-Norm und mit Prüfprotokoll.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4l-8 8a1 1 0 0 1-.5.27l-3 .7a.6.6 0 0 1-.72-.72l.7-3a1 1 0 0 1 .27-.5z"/><path d="M13 8l3 3"/></svg>
+          <h3>Maler- &amp; Tapezierarbeiten</h3>
+          <p>Innenanstrich, Fassaden, Stuck restaurieren. Wir schützen Ihre Möbel und Böden, bevor wir anfangen.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          <h3>Fliesen- &amp; Bodenarbeiten</h3>
+          <p>Von der Altbau-Diele bis zum Fliesenbad: Verlegung, Ausgleich, Sockelleisten – maßgenau geplant.</p>
+        </div>
+        <div class="service-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3l8.5 8.5"/><path d="M14 6l4-4 1 1-4 4"/><path d="M6 14l-4 4 1 1 4-4"/><circle cx="17" cy="17" r="4"/></svg>
+          <h3>Tischlerarbeiten</h3>
+          <p>Einbaumöbel, Türen, Fensterreparatur. Maßanfertigung für Altbauwohnungen mit schrägen Wänden.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER UNS -->
+  <section class="about" id="ueber-uns">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-text">
+          <span class="eyebrow">Über uns</span>
+          <h2>Gegründet am Küchentisch, gewachsen im Kiez</h2>
+          <p>Winterfeldt Handwerk wurde 2009 von Tomasz Winterfeldt gegründet, gelernter Tischler mit Wurzeln in Schöneberg. Was als Ein-Mann-Betrieb für kleine Reparaturen begann, ist heute ein Team aus zwölf Gesellinnen und Gesellen.</p>
+          <p>Wir nehmen pro Woche bewusst nur so viele Aufträge an, wie wir termingerecht und in guter Qualität abschließen können. Lieber eine ehrliche Wartezeit als ein gebrochenes Versprechen.</p>
+          <div class="quote-block">
+            <p>„Wir reparieren hier nicht nur Leitungen. Die Hälfte unserer Kunden kennen wir seit Jahren beim Vornamen – das merkt man der Arbeit an.“</p>
+            <cite>Tomasz Winterfeldt, Gründer</cite>
+          </div>
+        </div>
+        <div class="about-panel" aria-hidden="true">
+          <span class="tag">WERKSTATT · CRELLESTRASSE 21</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROZESS -->
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Ablauf</span>
+        <h2>So arbeiten wir mit Ihnen</h2>
+        <p>Vier Schritte von der ersten Nachricht bis zur Abnahme – ohne Überraschungen auf der Rechnung.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <h3>Anfrage stellen</h3>
+          <p>Formular ausfüllen oder anrufen. Wir melden uns innerhalb von einem Werktag zurück.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <h3>Besichtigung vor Ort</h3>
+          <p>Wir kommen vorbei, messen aus und besprechen Material und Zeitrahmen direkt mit Ihnen.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <h3>Festpreisangebot</h3>
+          <p>Sie erhalten ein schriftliches Angebot mit Festpreis – ohne versteckte Positionen.</p>
+        </div>
+        <div class="process-step">
+          <span class="step-num">04</span>
+          <h3>Ausführung &amp; Abnahme</h3>
+          <p>Nach Fertigstellung gehen wir gemeinsam durch die Arbeit, bevor die Rechnung gestellt wird.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REFERENZEN -->
+  <section id="referenzen">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Referenzen</span>
+        <h2>Zuletzt im Kiez erledigt</h2>
+        <p>Eine kleine Auswahl abgeschlossener Projekte aus der Nachbarschaft.</p>
+      </div>
+      <div class="ref-grid">
+        <div class="ref-card">
+          <div class="ref-img"><span class="street">Goltzstraße</span></div>
+          <div class="ref-body">
+            <span class="eyebrow">Badmodernisierung</span>
+            <h3>Altbaubad, 6 m²</h3>
+            <p>Komplettsanierung inklusive neuer Leitungen, bodengleicher Dusche und Fliesen in 9 Arbeitstagen.</p>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-img alt2"><span class="street">Bayerischer Platz</span></div>
+          <div class="ref-body">
+            <span class="eyebrow">Elektro &amp; Maler</span>
+            <h3>Zwei-Zimmer-Wohnung</h3>
+            <p>Neue Sicherungstechnik, sechs zusätzliche Steckdosen und kompletter Neuanstrich vor Mietereinzug.</p>
+          </div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-img alt3"><span class="street">Crellestraße</span></div>
+          <div class="ref-body">
+            <span class="eyebrow">Tischlerarbeiten</span>
+            <h3>Einbauschrank im Flur</h3>
+            <p>Maßanfertigung für eine schräge Altbauwand, inklusive Lackierung passend zu den Türrahmen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Stimmen aus dem Kiez</span>
+        <h2>Was Kundinnen und Kunden sagen</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt">Pünktlich, sauber gearbeitet und das Angebot hat exakt gestimmt. Genau das, was man sich von einem Handwerker wünscht.</p>
+          <div class="person">— Frau Albrecht, Goltzstraße</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt">Wir hatten einen Rohrbruch am Samstagabend. Innerhalb von zwei Stunden war jemand da. Das hat uns wirklich beruhigt.</p>
+          <div class="person">— Herr Dombrowski, Bayerischer Platz</div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p class="txt">Endlich ein Betrieb, der Termine einhält. Die Kommunikation lief unkompliziert über WhatsApp, ohne dass etwas untergegangen ist.</p>
+          <div class="person">— Familie Yıldız, Crellestraße</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Kontakt</span>
+        <h2>Lassen Sie uns über Ihr Projekt sprechen</h2>
+        <p>Beschreiben Sie kurz, worum es geht – wir melden uns in der Regel innerhalb eines Werktags mit einem Vorschlag für einen Besichtigungstermin.</p>
+      </div>
+      <div class="contact-grid">
+        <form onsubmit="event.preventDefault(); alert('Demo-Formular – in einer echten Website würde diese Anfrage jetzt versendet.');">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Vor- und Nachname" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefon</label>
+              <input id="phone" type="tel" placeholder="030 123 456">
+            </div>
+          </div>
+          <div class="field">
+            <label for="service">Gewünschtes Gewerk</label>
+            <select id="service">
+              <option>Renovierung &amp; Sanierung</option>
+              <option>Sanitär &amp; Heizung</option>
+              <option>Elektroinstallation</option>
+              <option>Maler- &amp; Tapezierarbeiten</option>
+              <option>Fliesen- &amp; Bodenarbeiten</option>
+              <option>Tischlerarbeiten</option>
+              <option>Weiß ich noch nicht</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Worum geht es?</label>
+            <textarea id="message" placeholder="Kurz beschreiben: z. B. Bad soll renoviert werden, ca. 5 m², Mietwohnung."></textarea>
+          </div>
+          <button type="submit" class="btn brass" style="align-self:flex-start;">Anfrage senden</button>
+          <p class="form-note">Dies ist eine Demo-Website – das Formular versendet keine echten Daten.</p>
+        </form>
+
+        <div class="contact-info">
+          <h3>Direkter Kontakt</h3>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2 2a14 14 0 0 0 6 6l2-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5z"/></svg>
+            <div><strong>Telefon</strong>030 / 214 567 89</div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 4l8 8 8-8"/></svg>
+            <div><strong>E-Mail</strong>anfrage@winterfeldt-handwerk.berlin</div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            <div><strong>Werkstatt</strong>Crellestraße 21, 10827 Berlin-Schöneberg</div>
+          </div>
+          <div class="info-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div><strong>Erreichbarkeit</strong>Mo–Fr 7:30–17:00 Uhr · Notdienst nach Vereinbarung</div>
+          </div>
+
+          <div class="map-stub" aria-hidden="true">
+            <svg viewBox="0 0 400 170" preserveAspectRatio="none">
+              <rect width="400" height="170" fill="#E8E1D2"/>
+              <line x1="0" y1="40" x2="400" y2="30" stroke="#C7CCC9" stroke-width="6"/>
+              <line x1="0" y1="120" x2="400" y2="135" stroke="#C7CCC9" stroke-width="6"/>
+              <line x1="120" y1="0" x2="100" y2="170" stroke="#C7CCC9" stroke-width="6"/>
+              <line x1="260" y1="0" x2="280" y2="170" stroke="#C7CCC9" stroke-width="6"/>
+              <circle cx="190" cy="80" r="7" fill="#A4402E"/>
+              <path d="M190 73 L190 50" stroke="#A4402E" stroke-width="3"/>
+              <circle cx="190" cy="50" r="4" fill="#A4402E"/>
+              <text x="205" y="84" font-family="JetBrains Mono, monospace" font-size="11" fill="#1B3A4B">Crellestraße 21</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="l1">WINTERFELDT</span>
+          <span class="l2">HANDWERK BERLIN</span>
+        </div>
+        <p>Handwerksbetrieb für Renovierung, Sanitär, Elektro und mehr – ansässig in Berlin-Schöneberg, rund um den Winterfeldtplatz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Leistungen</h4>
+        <ul>
+          <li>Renovierung &amp; Sanierung</li>
+          <li>Sanitär &amp; Heizung</li>
+          <li>Elektroinstallation</li>
+          <li>Maler- &amp; Tischlerarbeiten</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Crellestraße 21, 10827 Berlin</li>
+          <li>030 / 214 567 89</li>
+          <li>anfrage@winterfeldt-handwerk.berlin</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Winterfeldt Handwerk GbR — Demo-Website, fiktiver Betrieb</span>
+      <span>Impressum · Datenschutz</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
